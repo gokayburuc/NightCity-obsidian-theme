@@ -5,13 +5,13 @@
             #e8df06 #be021b #94d788 #e5b12d #746f02
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
 /* ---------- Global font & base variables ---------- */
 body {
-  --font-text-theme: 'Michroma', 'Segoe UI', sans-serif;
-  --font-interface-theme: 'Michroma', 'Segoe UI', sans-serif;
-  --font-monospace-theme: 'Michroma', monospace;
+  --font-text-theme: "Michroma", "Segoe UI", sans-serif;
+  --font-interface-theme: "Michroma", "Segoe UI", sans-serif;
+  --font-monospace-theme: "Michroma", monospace;
 }
 
 :root {
@@ -103,7 +103,7 @@ h6,
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-weight: 700;
   color: var(--nc-yellow);
   letter-spacing: 0.06em;
@@ -196,18 +196,20 @@ s,
 .markdown-rendered table {
   border-collapse: collapse;
   border: 1px solid var(--nc-teal);
-  box-shadow: 0 0 12px rgba(63, 132, 147, 0.25), inset 0 0 20px rgba(7, 26, 35, 0.6);
+  box-shadow:
+    0 0 12px rgba(63, 132, 147, 0.25),
+    inset 0 0 20px rgba(7, 26, 35, 0.6);
   width: 100%;
 }
 
 .markdown-rendered th {
   background: linear-gradient(135deg, var(--nc-bg-raised), #12405a);
   color: var(--nc-yellow);
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-size: 0.85em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border-bottom: 2px solid var(--nc-yellow) !important;
+  border-bottom: 2px solid var(--nc-yellow);
   padding: 0.5em 0.75em;
   text-shadow: 0 0 6px rgba(232, 223, 6, 0.4);
 }
@@ -240,17 +242,23 @@ s,
   position: relative;
   border: 1px solid;
   border-radius: 2px;
-  background:
-    linear-gradient(180deg, rgba(25, 70, 90, 0.35), rgba(7, 26, 35, 0.85));
+  background: linear-gradient(180deg,
+      rgba(25, 70, 90, 0.35),
+      rgba(7, 26, 35, 0.85));
   box-shadow:
     0 0 10px rgba(63, 132, 147, 0.25),
     inset 0 0 18px rgba(7, 26, 35, 0.6);
-  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  clip-path: polygon(14px 0,
+      100% 0,
+      100% calc(100% - 14px),
+      calc(100% - 14px) 100%,
+      0 100%,
+      0 14px);
   margin: 1em 0;
 }
 
 .callout-title {
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -259,7 +267,7 @@ s,
 
 /* scanline strip on top of every callout */
 .callout::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 2px;
@@ -286,21 +294,25 @@ s,
 .callout[data-callout="tip"] {
   --callout-color: var(--nc-yellow);
   border-color: var(--nc-yellow);
-  background:
-    linear-gradient(180deg, rgba(232, 223, 6, 0.07), rgba(7, 26, 35, 0.85));
+  background: linear-gradient(180deg,
+      rgba(232, 223, 6, 0.07),
+      rgba(7, 26, 35, 0.85));
 }
 
 .callout[data-callout="tip"] .callout-title {
   color: var(--nc-yellow);
-  text-shadow: 0 0 8px rgba(232, 223, 6, 0.6), 1px 0 0 rgba(190, 2, 27, 0.5);
+  text-shadow:
+    0 0 8px rgba(232, 223, 6, 0.6),
+    1px 0 0 rgba(190, 2, 27, 0.5);
 }
 
 /* --- JACKED IN / success — green arasaka-uplink --- */
 .callout[data-callout="success"] {
   --callout-color: var(--nc-green);
   border-color: var(--nc-green);
-  background:
-    linear-gradient(180deg, rgba(148, 215, 136, 0.08), rgba(7, 26, 35, 0.85));
+  background: linear-gradient(180deg,
+      rgba(148, 215, 136, 0.08),
+      rgba(7, 26, 35, 0.85));
 }
 
 .callout[data-callout="success"] .callout-title {
@@ -312,8 +324,9 @@ s,
 .callout[data-callout="warning"] {
   --callout-color: var(--nc-gold);
   border-color: var(--nc-gold);
-  background:
-    linear-gradient(180deg, rgba(229, 177, 45, 0.08), rgba(7, 26, 35, 0.85));
+  background: linear-gradient(180deg,
+      rgba(229, 177, 45, 0.08),
+      rgba(7, 26, 35, 0.85));
 }
 
 .callout[data-callout="warning"] .callout-title {
@@ -328,9 +341,12 @@ s,
 .callout[data-callout="bug"] {
   --callout-color: var(--nc-red);
   border-color: var(--nc-red);
-  background:
-    linear-gradient(180deg, rgba(190, 2, 27, 0.12), rgba(7, 26, 35, 0.85));
-  box-shadow: 0 0 14px rgba(190, 2, 27, 0.35), inset 0 0 18px rgba(7, 26, 35, 0.6);
+  background: linear-gradient(180deg,
+      rgba(190, 2, 27, 0.12),
+      rgba(7, 26, 35, 0.85));
+  box-shadow:
+    0 0 14px rgba(190, 2, 27, 0.35),
+    inset 0 0 18px rgba(7, 26, 35, 0.6);
 }
 
 .callout[data-callout="danger"] .callout-title,
@@ -388,7 +404,8 @@ s,
   border: none;
   height: 1px;
   background: repeating-linear-gradient(90deg,
-      var(--nc-teal) 0 12px, transparent 12px 20px);
+      var(--nc-teal) 0 12px,
+      transparent 12px 20px);
   box-shadow: 0 0 8px rgba(63, 132, 147, 0.5);
 }
 
@@ -430,7 +447,7 @@ s,
 
 /* ---------- Inline note title — neon yellow ---------- */
 .inline-title {
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-weight: 700;
   color: var(--nc-yellow);
   letter-spacing: 0.06em;
@@ -455,9 +472,12 @@ s,
 .metadata-container {
   border: 1px solid var(--nc-teal);
   border-radius: 2px;
-  background:
-    linear-gradient(135deg, rgba(25, 70, 90, 0.45), rgba(7, 26, 35, 0.85));
-  box-shadow: 0 0 10px rgba(63, 132, 147, 0.25), inset 0 0 14px rgba(7, 26, 35, 0.5);
+  background: linear-gradient(135deg,
+      rgba(25, 70, 90, 0.45),
+      rgba(7, 26, 35, 0.85));
+  box-shadow:
+    0 0 10px rgba(63, 132, 147, 0.25),
+    inset 0 0 14px rgba(7, 26, 35, 0.5);
   padding: 0.4em 0.6em;
 }
 
@@ -467,7 +487,7 @@ s,
 }
 
 .metadata-property-key {
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-size: 0.8em;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -481,7 +501,7 @@ s,
 }
 
 .metadata-property:hover {
-  --metadata-property-background: rgba(232, 223, 6, 0.10);
+  --metadata-property-background: rgba(232, 223, 6, 0.1);
   border-left-color: var(--nc-yellow);
 }
 
@@ -507,7 +527,7 @@ s,
 .tag,
 .cm-hashtag {
   color: var(--nc-yellow);
-  font-family: 'Michroma', sans-serif;
+  font-family: "Michroma", sans-serif;
   font-size: 0.75em;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -515,7 +535,12 @@ s,
   background: rgba(25, 70, 90, 0.55);
   border: 1px solid var(--nc-yellow);
   border-radius: 2px;
-  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  clip-path: polygon(6px 0,
+      100% 0,
+      100% calc(100% - 6px),
+      calc(100% - 6px) 100%,
+      0 100%,
+      0 6px);
   padding: 0.15em 0.6em;
   text-shadow: 0 0 6px rgba(232, 223, 6, 0.5);
   box-shadow: 0 0 8px rgba(232, 223, 6, 0.25);
