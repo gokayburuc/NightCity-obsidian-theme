@@ -1,0 +1,544 @@
+/* ============================================================
+   NIGHT CITY // Obsidian Cyberpunk Theme
+   Inspired by Cyberpunk 2077 & Cyberpunk: Edgerunners
+   Palette: #071a23 #0a2431 #19465a #3f8493
+            #e8df06 #be021b #94d788 #e5b12d #746f02
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+/* ---------- Global font & base variables ---------- */
+body {
+  --font-text-theme: 'Michroma', 'Segoe UI', sans-serif;
+  --font-interface-theme: 'Michroma', 'Segoe UI', sans-serif;
+  --font-monospace-theme: 'Michroma', monospace;
+}
+
+:root {
+  --nc-bg-deep: #071a23;
+  --nc-bg-panel: #0a2431;
+  --nc-bg-raised: #19465a;
+  --nc-teal: #3f8493;
+  --nc-yellow: #e8df06;
+  --nc-red: #be021b;
+  --nc-green: #94d788;
+  --nc-gold: #e5b12d;
+  --nc-text: #746f02;
+  /* pastel yellow for normal text */
+
+  --input-hover-border-color: var(--nc-teal);
+  --input-focus-border-color: var(--nc-yellow);
+}
+
+/* ---------- Dark scheme (primary experience) ---------- */
+.theme-dark {
+  --background-primary: var(--nc-bg-deep);
+  --background-primary-alt: var(--nc-bg-panel);
+  --background-secondary: var(--nc-bg-panel);
+  --background-secondary-alt: var(--nc-bg-raised);
+  --titlebar-background: var(--nc-bg-deep);
+  --titlebar-background-focused: var(--nc-bg-panel);
+
+  --text-normal: var(--nc-text);
+  --text-muted: #5a6f3a;
+  --text-faint: #44573a;
+  --text-accent: var(--nc-teal);
+  --text-accent-hover: var(--nc-yellow);
+  --text-selection: rgba(63, 132, 147, 0.35);
+  --text-on-accent: #071a23;
+
+  --interactive-normal: var(--nc-bg-raised);
+  --interactive-hover: #23506a;
+  --interactive-accent: var(--nc-teal);
+  --interactive-accent-hover: #4f9db0;
+
+  --blockquote-border-color: var(--nc-teal);
+  --scrollbar-thumb-bg: var(--nc-bg-raised);
+  --scrollbar-active-thumb-bg: var(--nc-teal);
+  --tab-outline-color: var(--nc-teal);
+  --divider-color: #12384a;
+
+  --link-color: var(--nc-teal);
+  --link-color-hover: var(--nc-yellow);
+  --link-unresolved-color: var(--nc-red);
+
+  --hr-color: var(--nc-teal);
+  --checkbox-color: var(--nc-teal);
+  --checkbox-color-hover: var(--nc-yellow);
+  --checkbox-border-color: var(--nc-teal);
+
+  --table-header-background: var(--nc-bg-raised);
+  --table-header-color: var(--nc-yellow);
+  --table-row-even-background: #0c2a3a;
+  --table-row-odd-background: var(--nc-bg-panel);
+  --table-row-background-hover: #1d5064;
+}
+
+/* ---------- Light scheme (Night City by day) ---------- */
+.theme-light {
+  --background-primary: #dfe9ee;
+  --background-primary-alt: #c8dae2;
+  --background-secondary: #cfdfe6;
+  --background-secondary-alt: #b7d0da;
+  --text-normal: #4a4a08;
+  --titlebar-background: #c8dae2;
+  --text-accent: #1f5a6a;
+  --link-color: #1f5a6a;
+  --link-color-hover: var(--nc-red);
+  --interactive-accent: #3f8493;
+}
+
+/* ============================================================
+   HEADINGS — Michroma, bold, neon glow
+   ============================================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 700;
+  color: var(--nc-yellow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 4px rgba(232, 223, 6, 0.55),
+    0 0 12px rgba(232, 223, 6, 0.35),
+    0 0 24px rgba(232, 223, 6, 0.18);
+}
+
+h1,
+.markdown-preview-view h1 {
+  border-bottom: 2px solid var(--nc-red);
+  padding-bottom: 0.3em;
+}
+
+h2,
+.markdown-preview-view h2 {
+  border-bottom: 1px solid var(--nc-teal);
+  padding-bottom: 0.2em;
+}
+
+h3,
+.markdown-preview-view h3 {
+  color: var(--nc-gold);
+  text-shadow: 0 0 8px rgba(229, 177, 45, 0.4);
+}
+
+h4,
+.markdown-preview-view h4 {
+  color: var(--nc-green);
+  text-shadow: 0 0 8px rgba(148, 215, 136, 0.4);
+}
+
+h5,
+h6,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: #b3e05f;
+  text-shadow: 0 0 6px rgba(148, 215, 136, 0.3);
+}
+
+/* Heading hover glitch pulse */
+h1:hover,
+h2:hover,
+h3:hover {
+  text-shadow:
+    0 0 6px var(--nc-yellow),
+    0 0 18px var(--nc-yellow),
+    0 0 2px var(--nc-red);
+  transition: text-shadow 0.25s ease;
+}
+
+/* ============================================================
+   EMPHASIS — bold / italic / underline in palette colors
+   ============================================================ */
+.markdown-rendered strong,
+.markdown-source-view .cm-strong,
+strong {
+  color: var(--nc-yellow);
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(232, 223, 6, 0.35);
+}
+
+.markdown-rendered em,
+.markdown-source-view .cm-em,
+em {
+  color: var(--nc-red);
+  font-style: italic;
+}
+
+.markdown-rendered u,
+.markdown-source-view .cm-underline,
+u {
+  color: var(--nc-green);
+  text-decoration-color: var(--nc-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* == highlighted == or custom green italics inside bold get gold */
+s,
+.markdown-rendered del {
+  color: var(--nc-gold);
+}
+
+/* ============================================================
+   TABLES — yellow / red / green / gold tone scheme
+   ============================================================ */
+.markdown-rendered table {
+  border-collapse: collapse;
+  border: 1px solid var(--nc-teal);
+  box-shadow: 0 0 12px rgba(63, 132, 147, 0.25), inset 0 0 20px rgba(7, 26, 35, 0.6);
+  width: 100%;
+}
+
+.markdown-rendered th {
+  background: linear-gradient(135deg, var(--nc-bg-raised), #12405a);
+  color: var(--nc-yellow);
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--nc-yellow) !important;
+  padding: 0.5em 0.75em;
+  text-shadow: 0 0 6px rgba(232, 223, 6, 0.4);
+}
+
+.markdown-rendered td {
+  color: var(--nc-text);
+  border: 1px solid rgba(63, 132, 147, 0.4);
+  padding: 0.45em 0.75em;
+}
+
+.markdown-rendered tr:nth-child(odd) td {
+  background: #0c2a3a;
+}
+
+.markdown-rendered tr:nth-child(even) td {
+  background: var(--nc-bg-panel);
+}
+
+.markdown-rendered tbody tr:hover td {
+  background: var(--nc-bg-raised);
+  border-color: var(--nc-gold);
+  box-shadow: inset 3px 0 0 var(--nc-red);
+}
+
+/* ============================================================
+   CALLOUTS — Night City / Edgerunners futuristic frames
+   ============================================================ */
+.callout {
+  --callout-border-width: 1px;
+  position: relative;
+  border: 1px solid;
+  border-radius: 2px;
+  background:
+    linear-gradient(180deg, rgba(25, 70, 90, 0.35), rgba(7, 26, 35, 0.85));
+  box-shadow:
+    0 0 10px rgba(63, 132, 147, 0.25),
+    inset 0 0 18px rgba(7, 26, 35, 0.6);
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  margin: 1em 0;
+}
+
+.callout-title {
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5em 0.75em;
+}
+
+/* scanline strip on top of every callout */
+.callout::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: repeating-linear-gradient(90deg,
+      currentColor 0 8px,
+      transparent 8px 14px);
+  opacity: 0.8;
+}
+
+/* --- NETRUNNER / info — teal terminal --- */
+.callout[data-callout="info"],
+.callout[data-callout="note"] {
+  --callout-color: var(--nc-teal);
+  border-color: var(--nc-teal);
+}
+
+.callout[data-callout="info"] .callout-title,
+.callout[data-callout="note"] .callout-title {
+  color: #6fc3d4;
+  text-shadow: 0 0 8px rgba(63, 132, 147, 0.8);
+}
+
+/* --- BRIGHT IDEA / tip — yellow glitch --- */
+.callout[data-callout="tip"] {
+  --callout-color: var(--nc-yellow);
+  border-color: var(--nc-yellow);
+  background:
+    linear-gradient(180deg, rgba(232, 223, 6, 0.07), rgba(7, 26, 35, 0.85));
+}
+
+.callout[data-callout="tip"] .callout-title {
+  color: var(--nc-yellow);
+  text-shadow: 0 0 8px rgba(232, 223, 6, 0.6), 1px 0 0 rgba(190, 2, 27, 0.5);
+}
+
+/* --- JACKED IN / success — green arasaka-uplink --- */
+.callout[data-callout="success"] {
+  --callout-color: var(--nc-green);
+  border-color: var(--nc-green);
+  background:
+    linear-gradient(180deg, rgba(148, 215, 136, 0.08), rgba(7, 26, 35, 0.85));
+}
+
+.callout[data-callout="success"] .callout-title {
+  color: var(--nc-green);
+  text-shadow: 0 0 8px rgba(148, 215, 136, 0.6);
+}
+
+/* --- CYBERPSYCHO / warning — gold alert --- */
+.callout[data-callout="warning"] {
+  --callout-color: var(--nc-gold);
+  border-color: var(--nc-gold);
+  background:
+    linear-gradient(180deg, rgba(229, 177, 45, 0.08), rgba(7, 26, 35, 0.85));
+}
+
+.callout[data-callout="warning"] .callout-title {
+  color: var(--nc-gold);
+  text-shadow: 0 0 8px rgba(229, 177, 45, 0.6);
+  animation: nc-flicker 3.5s infinite;
+}
+
+/* --- FLATLINE / danger & bug — red emergency --- */
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"] {
+  --callout-color: var(--nc-red);
+  border-color: var(--nc-red);
+  background:
+    linear-gradient(180deg, rgba(190, 2, 27, 0.12), rgba(7, 26, 35, 0.85));
+  box-shadow: 0 0 14px rgba(190, 2, 27, 0.35), inset 0 0 18px rgba(7, 26, 35, 0.6);
+}
+
+.callout[data-callout="danger"] .callout-title,
+.callout[data-callout="error"] .callout-title,
+.callout[data-callout="bug"] .callout-title {
+  color: #ff4d5e;
+  text-shadow: 0 0 10px rgba(190, 2, 27, 0.8);
+}
+
+/* --- QUOTE / abstract — chrome dossier --- */
+.callout[data-callout="quote"],
+.callout[data-callout="abstract"] {
+  --callout-color: #9fb7c1;
+  border-color: #9fb7c1;
+  border-left: 3px solid var(--nc-teal);
+}
+
+.callout[data-callout="quote"] .callout-title,
+.callout[data-callout="abstract"] .callout-title {
+  color: #b8cdd6;
+}
+
+@keyframes nc-flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 1;
+  }
+
+  93% {
+    opacity: 0.55;
+  }
+
+  94% {
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0.7;
+  }
+
+  97% {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   MISC CHROME
+   ============================================================ */
+.markdown-rendered hr {
+  border: none;
+  height: 1px;
+  background: repeating-linear-gradient(90deg,
+      var(--nc-teal) 0 12px, transparent 12px 20px);
+  box-shadow: 0 0 8px rgba(63, 132, 147, 0.5);
+}
+
+::selection {
+  background: rgba(63, 132, 147, 0.45);
+  color: #e8f4f8;
+}
+
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--nc-red);
+  background: rgba(190, 2, 27, 0.06);
+  padding: 0.4em 1em;
+}
+
+.markdown-rendered code,
+.markdown-source-view .cm-inlineCode {
+  color: var(--nc-green);
+  background: rgba(10, 36, 49, 0.9);
+  border: 1px solid rgba(63, 132, 147, 0.4);
+}
+
+.markdown-rendered a.internal-link,
+.markdown-source-view .cm-link {
+  color: var(--nc-teal);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(63, 132, 147, 0.6);
+}
+
+.markdown-rendered a.internal-link:hover {
+  color: var(--nc-yellow);
+  text-shadow: 0 0 8px rgba(232, 223, 6, 0.6);
+}
+
+/* Active editor line — neon rail */
+.markdown-source-view.mod-cm6 .cm-active.cm-line {
+  background: rgba(63, 132, 147, 0.12);
+  border-left: 2px solid var(--nc-yellow);
+}
+
+/* ---------- Inline note title — neon yellow ---------- */
+.inline-title {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 700;
+  color: var(--nc-yellow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 4px rgba(232, 223, 6, 0.55),
+    0 0 12px rgba(232, 223, 6, 0.35),
+    0 0 24px rgba(232, 223, 6, 0.18);
+  border-bottom: 2px solid var(--nc-red);
+  padding-bottom: 0.3em;
+}
+
+.inline-title:hover {
+  text-shadow:
+    0 0 6px var(--nc-yellow),
+    0 0 18px var(--nc-yellow),
+    0 0 2px var(--nc-red);
+  transition: text-shadow 0.25s ease;
+}
+
+/* ---------- PROPERTIES / frontmatter — bright panel ---------- */
+.metadata-container {
+  border: 1px solid var(--nc-teal);
+  border-radius: 2px;
+  background:
+    linear-gradient(135deg, rgba(25, 70, 90, 0.45), rgba(7, 26, 35, 0.85));
+  box-shadow: 0 0 10px rgba(63, 132, 147, 0.25), inset 0 0 14px rgba(7, 26, 35, 0.5);
+  padding: 0.4em 0.6em;
+}
+
+.metadata-property {
+  --metadata-property-background: rgba(25, 70, 90, 0.35);
+  border-left: 2px solid var(--nc-gold);
+}
+
+.metadata-property-key {
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nc-gold);
+  text-shadow: 0 0 6px rgba(229, 177, 45, 0.45);
+}
+
+.metadata-property-value {
+  color: var(--nc-green);
+  text-shadow: 0 0 6px rgba(148, 215, 136, 0.3);
+}
+
+.metadata-property:hover {
+  --metadata-property-background: rgba(232, 223, 6, 0.10);
+  border-left-color: var(--nc-yellow);
+}
+
+/* raw frontmatter block (edit mode) */
+.markdown-source-view.mod-cm6 .cm-s-obsidian .frontmatter,
+.markdown-rendered .frontmatter {
+  border: 1px solid var(--nc-teal);
+  background: rgba(10, 36, 49, 0.7);
+  box-shadow: inset 0 0 12px rgba(7, 26, 35, 0.6);
+}
+
+.markdown-source-view.mod-cm6 .frontmatter .cm-key,
+.markdown-rendered .frontmatter .frontmatter-container .key {
+  color: var(--nc-gold);
+}
+
+.markdown-source-view.mod-cm6 .frontmatter .cm-string,
+.markdown-rendered .frontmatter .frontmatter-container .value {
+  color: var(--nc-green);
+}
+
+/* ---------- TAGS — bright neon pills ---------- */
+.tag,
+.cm-hashtag {
+  color: var(--nc-yellow);
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(25, 70, 90, 0.55);
+  border: 1px solid var(--nc-yellow);
+  border-radius: 2px;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  padding: 0.15em 0.6em;
+  text-shadow: 0 0 6px rgba(232, 223, 6, 0.5);
+  box-shadow: 0 0 8px rgba(232, 223, 6, 0.25);
+}
+
+.tag:hover,
+.cm-hashtag:hover {
+  color: var(--nc-red);
+  border-color: var(--nc-red);
+  text-shadow: 0 0 8px rgba(190, 2, 27, 0.7);
+  box-shadow: 0 0 10px rgba(190, 2, 27, 0.35);
+}
+
+/* editor hashtag splits */
+.cm-hashtag-begin {
+  border-right: none;
+}
+
+.cm-hashtag-end {
+  border-left: none;
+}
+
+/* Tab & ribbon accents */
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 var(--nc-yellow);
+}
